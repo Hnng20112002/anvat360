@@ -29,18 +29,6 @@ import { AuthProvider } from 'src/auth/context/jwt';
 // ----------------------------------------------------------------------
 
 export default function App() {
-  const charAt = `
-
-  ░░░    ░░░
-  ▒▒▒▒  ▒▒▒▒
-  ▒▒ ▒▒▒▒ ▒▒
-  ▓▓  ▓▓  ▓▓
-  ██      ██
-
-  `;
-
-  console.info(`%c${charAt}`, 'color: #5BE49B');
-
   useScrollToTop();
 
   return (
@@ -48,7 +36,7 @@ export default function App() {
       <LocalizationProvider>
         <SettingsProvider
           defaultSettings={{
-            themeMode: 'light', // 'light' | 'dark'
+            themeMode: 'dark', // 'light' | 'dark'
             themeDirection: 'ltr', //  'rtl' | 'ltr'
             themeContrast: 'default', // 'default' | 'bold'
             themeLayout: 'vertical', // 'vertical' | 'horizontal' | 'mini'
