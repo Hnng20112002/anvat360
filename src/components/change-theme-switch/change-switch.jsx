@@ -2,11 +2,18 @@ import PropTypes from 'prop-types'; // Import prop-types
 import Switch from '@mui/material/Switch';
 import { styled, useTheme } from '@mui/material/styles';
 
-const ChangeThemeSwitch = ({ onTap }) => <StyleSwitch
-    onChange={onTap}
-/>
+const ChangeThemeSwitch = ({ onTap }) => {
+    const theme = useTheme();
+    const checked = theme.palette.mode === 'dark';
 
-const StyleSwitch = styled(Switch)(({ theme = useTheme() }) => ({
+    return <StyleSwitch
+        onChange={onTap}
+        checked={checked}
+        theme={theme}
+    />
+};
+
+const StyleSwitch = styled(Switch)(({ theme }) => ({
     width: 62,
     height: 34,
     padding: 7,
